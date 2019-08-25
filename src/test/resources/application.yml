@@ -1,0 +1,7 @@
+percolator:
+  clusters:
+    - name: test-cluster
+      apps:
+        - name: test-app
+          host: localhost
+          port: 1234

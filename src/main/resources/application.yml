@@ -1,0 +1,5 @@
+spring:
+  freemarker:
+    suffix: .ftlh
+    settings:
+      incompatible_improvements: 2.3.28
