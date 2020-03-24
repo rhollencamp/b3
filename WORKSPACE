@@ -16,11 +16,13 @@ maven_install(
     artifacts = [
         "org.springframework.boot:spring-boot-starter-freemarker:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.boot:spring-boot-starter-security:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.security:spring-security-oauth2-client:%s" % SPRING_SECURITY_VERSION,
-        "org.webjars:bootstrap:4.3.1",
+        "org.springframework.boot:spring-boot-starter-websocket:%s" % SPRING_BOOT_VERSION,
+        "org.webjars:bootstrap:4.4.1",
+        "org.webjars:jquery:3.4.1",
+        "org.webjars:sockjs-client:1.0.2",
+        "org.webjars:stomp-websocket:2.3.3",
+        "org.webjars:webjars-locator-core:0.35",
         "org.springframework.boot:spring-boot-starter-test:%s" % SPRING_BOOT_VERSION,
-        "org.springframework.security:spring-security-test:%s" % SPRING_SECURITY_VERSION,
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
