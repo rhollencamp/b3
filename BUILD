@@ -15,9 +15,9 @@ java_library(
         "@maven//:org_springframework_boot_spring_boot_autoconfigure",
         "@maven//:org_springframework_boot_spring_boot_starter_freemarker",
         "@maven//:org_springframework_boot_spring_boot_starter_web",
+        "@maven//:org_springframework_spring_beans",
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_core",
-        "@maven//:org_springframework_spring_messaging",
         "@maven//:org_springframework_spring_web",
         "@maven//:org_springframework_spring_webmvc",
         "@maven//:org_springframework_spring_websocket",
@@ -25,8 +25,7 @@ java_library(
     runtime_deps = [
         "@maven//:org_webjars_bootstrap",
         "@maven//:org_webjars_jquery",
-        "@maven//:org_webjars_sockjs_client",
-        "@maven//:org_webjars_stomp_websocket",
+        "@maven//:org_webjars_popper_js",
         "@maven//:org_webjars_webjars_locator_core",
     ],
 )
