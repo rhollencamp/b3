@@ -9,6 +9,7 @@ java_library(
     srcs = glob(["src/main/java/**/*.java"]),
     resources = glob(["src/main/resources/**/*.*"]),
     deps = [
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
         "@maven//:org_freemarker_freemarker",
         "@maven//:org_slf4j_slf4j_api",
         "@maven//:org_springframework_boot_spring_boot",

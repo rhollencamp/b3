@@ -1,4 +1,4 @@
-package net.thewaffleshop.b3;
+package net.thewaffleshop.b3.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
