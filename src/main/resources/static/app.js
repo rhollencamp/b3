@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var ws = new WebSocket("ws://" + window.location.host + "/test");
+    var ws = createWebSocket();
     ws.onmessage = function (evt) {
         var pos = JSON.parse(evt.data);
         $("#player").css("top", pos.y);
@@ -23,4 +23,10 @@ $(document).ready(function() {
     document.addEventListener('keyup', function(event) {
         keymap[event.keyCode] = false;
     });
+
+    function createWebSocket() {
+        var protocol = window.location.protocol == "https:" ? "wss" : "ws";
+        var url = protocol + "://" + window.location.host + "/test";
+        return new WebSocket(url);
+    }
 });
