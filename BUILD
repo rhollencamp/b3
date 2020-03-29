@@ -36,3 +36,19 @@ java_binary(
     main_class = "net.thewaffleshop.b3.B3Application",
     runtime_deps = [":b3-lib"],
 )
+
+container_image(
+    name = "b3-container-base",
+    base = "@adoptopenjdk-jre11-alpine//image",
+    ports = ["8080"],
+    symlinks = {
+        "/usr/bin/java": "/opt/java/openjdk/bin/java"
+    },
+)
+
+java_image(
+    name = "b3-container",
+    base = ":b3-container-base",
+    main_class = "net.thewaffleshop.b3.B3Application",
+    runtime_deps = [":b3-lib"],
+)
