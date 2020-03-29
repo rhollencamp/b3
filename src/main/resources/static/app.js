@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var ws = new WebSocket("ws://localhost:8080/test");
+    var ws = new WebSocket("ws://" + window.location.host + "/test");
     ws.onmessage = function (evt) {
         var pos = JSON.parse(evt.data);
         $("#player").css("top", pos.y);
