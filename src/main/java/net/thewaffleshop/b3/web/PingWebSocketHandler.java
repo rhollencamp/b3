@@ -20,17 +20,17 @@ public class PingWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        if (message.getPayload().contains("UP")) {
+        if (message.getPayload().contains("U")) {
             engine.setPlayerVy(-1);
-        } else if (message.getPayload().contains("DOWN")) {
+        } else if (message.getPayload().contains("D")) {
             engine.setPlayerVy(1);
         } else {
             engine.setPlayerVy(0);
         }
 
-        if (message.getPayload().contains("LEFT")) {
+        if (message.getPayload().contains("L")) {
             engine.setPlayerVx(-1);
-        } else if (message.getPayload().contains("RIGHT")) {
+        } else if (message.getPayload().contains("R")) {
             engine.setPlayerVx(1);
         } else {
             engine.setPlayerVx(0);

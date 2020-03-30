@@ -1,3 +1,5 @@
+import { isKeyDown } from "./modules/keyboard.js";
+
 $(document).ready(function() {
     var ws = createWebSocket();
     ws.onmessage = function (evt) {
@@ -7,22 +9,13 @@ $(document).ready(function() {
     };
 
     window.setInterval(function() {
-        var inputUpdate = [];
-        if (keymap[87]) inputUpdate.push('UP');
-        if (keymap[83]) inputUpdate.push('DOWN');
-        if (keymap[65]) inputUpdate.push('LEFT');
-        if (keymap[68]) inputUpdate.push('RIGHT');
-
-        ws.send(JSON.stringify(inputUpdate));
+        var inputUpdate = "";
+        if (isKeyDown("w")) inputUpdate += "U";
+        if (isKeyDown("s")) inputUpdate += "D";
+        if (isKeyDown("a")) inputUpdate += "L";
+        if (isKeyDown("d")) inputUpdate += "R";
+        ws.send(inputUpdate);
     }, 15);
-
-    var keymap = {};
-    document.addEventListener('keydown', function(event) {
-        keymap[event.keyCode] = true;
-    });
-    document.addEventListener('keyup', function(event) {
-        keymap[event.keyCode] = false;
-    });
 
     function createWebSocket() {
         var protocol = window.location.protocol == "https:" ? "wss" : "ws";
